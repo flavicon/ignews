@@ -1,13 +1,12 @@
 # IG.NEWS
 
-___
-
 ## Hi, everyone'!'
 
 ## This project is intended to be a platform for managing and subscribing to Blog
 
 ### The technologies used in the project will be':'
 
+>>>>>>> 8aaea94 (initial commit)
 - Framwork':' Next.js
 - CSS pre-processor':' Sass
 - Database':' FaunaDB
