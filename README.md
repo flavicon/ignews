@@ -1,7 +1,5 @@
 # IG.NEWS
 
-___
-
 ## Hi, everyone'!'
 
 ## This project is intended to be a platform for managing and subscribing to Blog
