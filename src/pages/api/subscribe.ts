@@ -1,9 +1,8 @@
-/* eslint-disable import/no-anonymous-default-export */
 import { NextApiRequest, NextApiResponse } from "next";
 import { getSession } from "next-auth/react";
 import { stripe } from "../../services/stripe";
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async function SessionCheckout(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === 'POST') {
         const session = await getSession({ req });
 
@@ -21,12 +20,12 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             mode: 'subscription',
             allow_promotion_codes: true,
             success_url: process.env.STRIPE_SUCCESS_URL,
-            cancel_url: process.env.STRIPE_CANCEL_URL,
+            cancel_url: process.env.STRIPE_CANCEL_URL
         });
 
         return res.status(200).json({ sessionId: stripeCheckoutSession.id })
     } else {
         res.setHeader('Allow', 'POST');
-        res.status(405).end('Method not allowed')
+        return res.status(405).end('Method not allowed');
     }
 };
