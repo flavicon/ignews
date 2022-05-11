@@ -14,3 +14,4 @@ The technologies used in the project will be:
 - Database: FaunaDB
 - Authentication: Github OAuth
 - CMS: Prismic CMS
+- Payment gateway: Stripe
