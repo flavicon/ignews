@@ -13,7 +13,10 @@ interface User {
     }
 }
 
-export default async function SessionCheckout(req: NextApiRequest, res: NextApiResponse) {
+export default async function SessionCheckout(
+    req: NextApiRequest, 
+    res: NextApiResponse
+) {
     if (req.method === 'POST') {
         const session = await getSession({ req });
 
